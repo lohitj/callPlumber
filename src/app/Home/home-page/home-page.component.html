@@ -1,0 +1,100 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">CallPlumber</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="Search">
+      <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>&nbsp;
+      <button class="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target=".bd-example-modal-xl" type="submit">Register</button>
+    </form>
+  </div>
+</nav>
+
+
+<!-- The Modal -->
+
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Registration</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+
+      <div class="modal-body">
+        <form class="form-horizontal" [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="usr" class="form-control-label">Name:</label>
+            <input type="text" formControlName="usr" class="form-control" id="usr">
+          </div>
+          <div class="form-group">
+            <label for="password" class="form-control-label">Password:</label>
+            <input class="form-control" type="password" formControlName="password" id="password">
+          </div>
+          <div class="form-group">
+            <label for="confPassword" class="form-control-label">Confirm Password:</label>
+            <input class="form-control" type="password" formControlName="confPassword" id="confPassword">
+          </div>
+
+          <div class="form-group">
+            <label for="Email" class="form-control-label">Email:</label>
+            <input class="form-control" formControlName="Email" type="email" id="Email">
+          </div>
+          <div class="form-group">
+            <label for="PhoneNo" class="form-control-label">Phone No.:</label>
+            <input class="form-control" formControlName="PhoneNo" type="number" id="PhoneNo">
+          </div>
+          <div class="form-check form-check-inline">
+            <a>Want to be :</a>&nbsp;
+            <input class="form-check-input form-radio-inline" formControlName="inlineRadioOptions" type="radio" name="inlineRadioOptions"
+              id="inlineRadio1" value="provider">
+            <label class="form-check-label" for="inlineRadio1">Provider</label>
+            <input class="form-check-input form-radio-inline" formControlName="inlineRadioOptions" type="radio" name="inlineRadioOptions"
+              id="inlineRadio2" value="consumer">
+            <label class="form-check-label" for="inlineRadio2">Consumer</label>
+          </div>
+          <div class="form-group">
+            <div #gmap style="width:100%;height:400px"></div>
+            <button (click)="findMe()" class="btn btn-primary">Find Me</button>&nbsp;
+            <!-- <button (click)="trackMe()" class="btn btn-danger">Track Me</button> -->
+          </div>
+          <div class="form-check">
+            <input type="checkbox" formControlName="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">I accept all terms and condition</label>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="onSubmit()" data-ng-bind-template="employeeForm">Save</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
