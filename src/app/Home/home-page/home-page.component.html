@@ -27,7 +27,7 @@
     </form>
   </div>
 </nav>
-
+<script src="home-page.component.js"></script>
 
 <!-- The Modal -->
 
@@ -76,11 +76,9 @@
               id="inlineRadio2" value="consumer">
             <label class="form-check-label" for="inlineRadio2">Consumer</label>
           </div>
-          <div class="form-group">
-            <div #gmap style="width:100%;height:400px"></div>
-            <button (click)="findMe()" class="btn btn-primary">Find Me</button>&nbsp;
-            <!-- <button (click)="trackMe()" class="btn btn-danger">Track Me</button> -->
-          </div>
+          <div #gmap style="width:100%;height:400px"></div>
+          <button (click)="findMe()" class="btn btn-primary">Find Me</button>&nbsp;
+          <button (onclick)="sendText()" class="btn btn-danger">Send Me</button>
           <div class="form-check">
             <input type="checkbox" formControlName="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">I accept all terms and condition</label>
